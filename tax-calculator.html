@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="styles.css" rel="stylesheet">
+<title>Handy Tax Calculators</title>
+
+<script>
+function calculate () {
+
+    var taxable_income = document.getElementById("t_i").value;
+    var tax = 0;
+
+    if (taxable_income > 180000) {
+        tax = taxable_income*0.45 - 26768;
+    } else if (taxable_income > 87000) {
+        tax = taxable_income*0.37 - 12368;
+    } else if (taxable_income > 37000) {
+        tax = taxable_income*0.325 - 8453;
+    } else if (taxable_income > 18200) {
+        tax = taxable_income*0.19 - 3458;
+    }
+
+    document.getElementById("taxPayable").innerHTML = "$" + tax.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
+</script>
+</head>
+
+<body>
+		<div class="container">
+			<div class="header">
+				<h1 class="header-heading">Handy Tax Calculators</h1>
+                       </div>
+			<div class="nav-bar">
+				<ul class="nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="tax-calculator.html">Tax Payable</a></li>
+					<li><a href="date-calculator.html">Date Difference</a></li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="main">
+<h1>Tax Payable Calculator</h1>
+<p>Calculates tax payable, given taxable income. Based on FY 2017/2018, for the official ATO version <a href="https://www.ato.gov.au/Calculators-and-tools/Host/?anchor=STC&anchor=STC#STC/questions" target="_new">click here</a>.</p>
+<!-- the form -->
+<p>
+Taxable Income: <input type="number" id="t_i" />
+</p>
+<!-- the input button -->
+<p>
+<input type="button" value="Calculate Tax" onclick="calculate()" />
+</p>
+<!-- the results -->
+<p>
+<div id="taxPayable"></div>
+</p>
+
+                                </div>
+                        </div>
+
+
+			<div class="footer">
+                        <p>Handy Tax Calculators by <a href="https://github.com/dmudigdo" target="_new">Didi Mudigdo</a> | CSS design courtesy of <a href="http://css.maxdesign.com.au/#layouts" target="_new">Max Design</a></p>
+                        </div>
+                </div>
+</body>
+
+</html>

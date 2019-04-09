@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="styles.css" rel="stylesheet">
+<title>Handy Tax Calculators</title>
+
+<script>
+function calculate() {
+
+    var start = new Date(document.getElementById("startdate").value);
+    var end = new Date(document.getElementById("enddate").value);
+    var dateDiff = 1 + (end - start)/86400000;
+
+    document.getElementById("days").innerHTML = dateDiff + " days (inclusive)";
+}
+</script>
+</head>
+
+<body>
+		<div class="container">
+			<div class="header">
+				<h1 class="header-heading">Handy Tax Calculators</h1>
+                       </div>
+			<div class="nav-bar">
+				<ul class="nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="tax-calculator.html">Tax Payable</a></li>
+					<li><a href="date-calculator.html">Date Difference</a></li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="main">
+<h1>Date Difference Calculator</h1>
+<p>Calculates the number of days (inclusive) between two dates.</p>
+
+<!-- the form -->
+<p>
+Start Date: <input type="date" id="startdate" />
+</p>
+<p>
+End Date: <input type="date" id="enddate" />
+</p>
+<!-- the input button -->
+<p>
+<input type="button" value="Calculate Day Difference" onclick="calculate()" />
+</p>
+<!-- the results -->
+<p>
+<div id="days"></div>
+</p>
+
+                                </div>
+                        </div>
+
+
+			<div class="footer">
+                        <p>Handy Tax Calculators by <a href="https://github.com/dmudigdo" target="_new">Didi Mudigdo</a> | CSS design courtesy of <a href="http://css.maxdesign.com.au/#layouts" target="_new">Max Design</a></p>
+                        </div>
+                </div>
+</body>
+</html>
